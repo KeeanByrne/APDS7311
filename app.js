@@ -6,10 +6,12 @@ const Message = require('./models/message')
 const fs = require('fs');
 const { url } = require('inspector')
 const cert = fs.readFileSync('keys/certificate.pem');
-
 const options = {
     server: {sslCA: cert}};
 const connstring = 'mongodb+srv://Admin:r8N6rYlhRkJbILC0@cluster0.zadnzfp.mongodb.net/'
+
+const messageRoutes = require("./routes/message");
+const userRoutes = require("./routes/user");
 
 mongoose.connect(connstring)
 .then(()=>
@@ -22,46 +24,19 @@ mongoose.connect(connstring)
 },options);
 
 app.use(express.json())
-
+app.use((reg,res,next)=>
+{
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin,X-Requested-With, Content-Type, Accept, Authorization');
+    res.setHeader('Access-Control-Allow-Methods', '*');
+    next();
+});
 
 app.get(urlprefix+'/', (req, res) => {
     res.send('Hello World')
 })
 
-
-app.get(urlprefix+'/messages', (req, res) => {
-    Message.find().then((messages)=>{
-        res.json(
-            {
-                message: 'Messages Found',
-                messages:messages 
-            }
-        )
-    })
-})
-
-
-app.post(urlprefix+'/messages', (req, res) => {
-    const message = new Message (
-        {
-            id: req.body.id, 
-            name: req.body.name
-        }
-    )
-    message.save();
-    res.status(201).json({
-        message: 'Message created', 
-        message:message
-    })
-})
-
-app.delete(urlprefix+"/messages/:id", (req, res)=>{
-    Message.deleteOne({_id: req.params.id})
-    .then((result)=>
-    {
-        res.status(200).json({message: "Message Has Been Deleted"});
-    });
-})
-
+app.use(urlprefix+'/messages',messageRoutes)
+app.use(urlprefix+'/users',userRoutes)
 
 module.exports = app;

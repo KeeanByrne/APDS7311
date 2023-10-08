@@ -9,8 +9,35 @@ GET https://localhost:3000/api/messages HTTP/1.1
 
 POST https://localhost:3000/api/messages HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1pY2hlbGxlIE1hbGlub3dza2kgMiIsInVzZXJpZCI6IjY1MjJkYWYyZWE5OWFkM2E4NzAwNzQ0YyIsImlhdCI6MTY5Njc4MzEzNiwiZXhwIjoxNjk2Nzg2NzM2fQ.AVkPEkmWISLxZup-kRRSYQTcxa9R9AgRYA6lSxIrAvg
 
 {
-    "id": "4", 
-    "name": "Hello Keean, how are you tomorrow"
+ "id": "55",
+ "name": "Cheesy Doritos"
 }
+
+
+###
+DELETE https://localhost:3000/api/messages/652273a25b00a908c361a5db HTTP/1.1
+
+###
+POST https://localhost:3000/api/users/signup HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Michelle Malinowski 2", 
+    "password": "keekelsLovesMichels"
+}
+
+###
+
+POST https://localhost:3000/api/users/login HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Michelle Malinowski 2", 
+    "password": "keekelsLovesMichels"
+}
+
+###
+
