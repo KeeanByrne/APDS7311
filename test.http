@@ -1,0 +1,16 @@
+GET http://localhost:3000/api HTTP/1.1
+###
+
+GET https://localhost:3000/test HTTP/1.1
+###
+
+GET https://localhost:3000/api/messages HTTP/1.1
+### 
+
+POST https://localhost:3000/api/messages HTTP/1.1
+content-type: application/json
+
+{
+    "id": "4", 
+    "name": "Hello Keean, how are you tomorrow"
+}
