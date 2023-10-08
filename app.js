@@ -9,7 +9,6 @@ const cert = fs.readFileSync('keys/certificate.pem');
 const options = {
     server: {sslCA: cert}};
 const connstring = 'mongodb+srv://Admin:r8N6rYlhRkJbILC0@cluster0.zadnzfp.mongodb.net/'
-
 const messageRoutes = require("./routes/message");
 const userRoutes = require("./routes/user");
 
@@ -32,6 +31,7 @@ app.use((reg,res,next)=>
     next();
 });
 
+//Left in for testing purposes
 app.get(urlprefix+'/', (req, res) => {
     res.send('Hello World')
 })

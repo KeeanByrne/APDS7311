@@ -14,7 +14,7 @@ router.post('/signup', (req, res)=>{
         user.save()
         .then(result => {
             res.status(201).json({
-                message: 'User Created Successfully:-)', 
+                message: 'User Created Successfully :-)', 
                 result: result
             });
         })
@@ -36,7 +36,7 @@ router.post('/login', (req, res) => {
                     message: 'Authentication Failed :-('
                 });
             }
-            // Assign the fetched user to the variable
+            // Assigned the fetched user to the variable
             fetchedUser = user;
             return bcrypt.compare(req.body.password, user.password);
         })

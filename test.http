@@ -5,38 +5,41 @@ GET https://localhost:3000/test HTTP/1.1
 ###
 
 GET https://localhost:3000/api/messages HTTP/1.1
-### 
 
+### 
+//To Make a post as a logged in user 
 POST https://localhost:3000/api/messages HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1pY2hlbGxlIE1hbGlub3dza2kgMiIsInVzZXJpZCI6IjY1MjJkYWYyZWE5OWFkM2E4NzAwNzQ0YyIsImlhdCI6MTY5Njc4MzEzNiwiZXhwIjoxNjk2Nzg2NzM2fQ.AVkPEkmWISLxZup-kRRSYQTcxa9R9AgRYA6lSxIrAvg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IllvbmdqdW4gUGFyayIsInVzZXJpZCI6IjY1MjJmNTQwYzZlNTU0MmI1NWRhNmYwOSIsImlhdCI6MTY5Njc4OTgzNiwiZXhwIjoxNjk2NzkzNDM2fQ.4hbEsRLudEL8rlE-Q48WkF5UZmGSglMIv-py0SUXAJM
 
 {
- "id": "55",
- "name": "Cheesy Doritos"
+ "id": "6901",
+ "name": "I am bad at golf"
 }
 
+###
+//To Delete a Post via its ID
+DELETE https://localhost:3000/api/messages/6522f564c6e5542b55da6f0c HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IllvbmdqdW4gUGFyayIsInVzZXJpZCI6IjY1MjJmNTQwYzZlNTU0MmI1NWRhNmYwOSIsImlhdCI6MTY5Njc4OTgzNiwiZXhwIjoxNjk2NzkzNDM2fQ.4hbEsRLudEL8rlE-Q48WkF5UZmGSglMIv-py0SUXAJM
 
 ###
-DELETE https://localhost:3000/api/messages/652273a25b00a908c361a5db HTTP/1.1
-
-###
+//To Register user
 POST https://localhost:3000/api/users/signup HTTP/1.1
 content-type: application/json
 
 {
-    "username": "Michelle Malinowski 2", 
-    "password": "keekelsLovesMichels"
+    "username": "Yongjun Park", 
+    "password": "Bad_Golfer"
 }
 
 ###
-
+//To login user
 POST https://localhost:3000/api/users/login HTTP/1.1
 content-type: application/json
 
 {
-    "username": "Michelle Malinowski 2", 
-    "password": "keekelsLovesMichels"
+    "username": "Yongjun Park", 
+    "password": "Bad_Golfer"
 }
 
 ###
