@@ -17,7 +17,6 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhb
     "issue": "Internet is down"
 }
 
-
 ### 
 //To Make a post as a logged in user 
 POST https://localhost:3000/api/messages HTTP/1.1
@@ -33,17 +32,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik9tY
 
 ###
 
-
-
-
 ###
 //To Delete a Post via its ID
 DELETE https://localhost:3000/api/messages/6523c53d3365ce5cf5c37b70 HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkphbWllLUxlZTQgQnlybmUiLCJ1c2VyaWQiOiI2NTIzYzRmMDMzNjVjZTVjZjVjMzdiNmQiLCJpYXQiOjE2OTY4NDMwMjAsImV4cCI6MTY5Njg0NjYyMH0.uTxO-1rubqncDIdjF0A_F2jW0-Xk6rT_ktTBay2wjlE
-
-
-
-
 
 
 

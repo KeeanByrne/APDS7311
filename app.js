@@ -39,20 +39,6 @@ app.get(urlprefix+'/', (req, res) => {
     res.send('Hello World')
 })
 
-app.post(urlprefix+'/fruits', (req, res) => {
-    const problem = new Problem (
-        {
-            id: req.body.id,
-            name: req.body.name
-        }
-    )
-    problem.save();
-    res.status(201).json({
-        message: 'Problem created',
-        problem:problem
-    }) 
-})
-
 app.use(urlprefix+'/messages',messageRoutes)
 app.use(urlprefix+'/users',userRoutes)
 app.use(urlprefix+'/problems',problemRoutes)
