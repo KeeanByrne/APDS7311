@@ -6,21 +6,46 @@ GET https://localhost:3000/test HTTP/1.1
 
 GET https://localhost:3000/api/messages HTTP/1.1
 
+
+### 
+POST https://localhost:3000/api/problems/problems HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlNhbW15IiwidXNlcmlkIjoiNjUyNDE0ZDA2NGQxNjE2MjEzN2ZmY2ZhIiwiaWF0IjoxNjk2ODYzNTI2LCJleHAiOjE2OTY4NjcxMjZ9.vUXH2fih12FWUGXNLFPNo2GSpFBJDmoP_3UoC8K-hxI
+
+{
+    "department": "Marketing",
+    "issue": "Internet is down"
+}
+
+
 ### 
 //To Make a post as a logged in user 
 POST https://localhost:3000/api/messages HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IllvbmdqdW4gUGFyayIsInVzZXJpZCI6IjY1MjJmNTQwYzZlNTU0MmI1NWRhNmYwOSIsImlhdCI6MTY5Njc4OTgzNiwiZXhwIjoxNjk2NzkzNDM2fQ.4hbEsRLudEL8rlE-Q48WkF5UZmGSglMIv-py0SUXAJM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik9tYSIsInVzZXJpZCI6IjY1MjQwYTYzNGNmYzU2ZTM1M2QxZWEzNSIsImlhdCI6MTY5Njg2MDc5NywiZXhwIjoxNjk2ODY0Mzk3fQ.ValeqFxsRg9udDscwGjnd6M6cD3uvMTfB08sP2EQP_g
 
 {
- "id": "6901",
- "name": "I am bad at golf"
+ "id": "00690",
+ "name": "Hello, how are you doing today Oma?"
 }
+
+//Change to ID, Issue, Department categories for posting
+
+###
+
+
+
 
 ###
 //To Delete a Post via its ID
-DELETE https://localhost:3000/api/messages/6522f564c6e5542b55da6f0c HTTP/1.1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IllvbmdqdW4gUGFyayIsInVzZXJpZCI6IjY1MjJmNTQwYzZlNTU0MmI1NWRhNmYwOSIsImlhdCI6MTY5Njc4OTgzNiwiZXhwIjoxNjk2NzkzNDM2fQ.4hbEsRLudEL8rlE-Q48WkF5UZmGSglMIv-py0SUXAJM
+DELETE https://localhost:3000/api/messages/6523c53d3365ce5cf5c37b70 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkphbWllLUxlZTQgQnlybmUiLCJ1c2VyaWQiOiI2NTIzYzRmMDMzNjVjZTVjZjVjMzdiNmQiLCJpYXQiOjE2OTY4NDMwMjAsImV4cCI6MTY5Njg0NjYyMH0.uTxO-1rubqncDIdjF0A_F2jW0-Xk6rT_ktTBay2wjlE
+
+
+
+
+
+
 
 ###
 //To Register user
@@ -28,9 +53,11 @@ POST https://localhost:3000/api/users/signup HTTP/1.1
 content-type: application/json
 
 {
-    "username": "Yongjun Park", 
-    "password": "Bad_Golfer"
+    "username": "Sammy", 
+    "password": "Iscute"
 }
+
+
 
 ###
 //To login user
@@ -38,8 +65,8 @@ POST https://localhost:3000/api/users/login HTTP/1.1
 content-type: application/json
 
 {
-    "username": "Yongjun Park", 
-    "password": "Bad_Golfer"
+    "username": "Sammy", 
+    "password": "Iscute"
 }
 
 ###

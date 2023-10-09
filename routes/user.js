@@ -46,7 +46,7 @@ router.post('/login', (req, res) => {
                     message: 'Authentication Failed :-('
                 });
             }
-            // Import and use the 'jsonwebtoken' library
+            // Imported and used the 'jsonwebtoken' library
             const jwt = require('jsonwebtoken');
             const token = jwt.sign(
                 {
