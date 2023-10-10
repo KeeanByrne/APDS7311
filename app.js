@@ -39,8 +39,11 @@ app.get(urlprefix+'/', (req, res) => {
     res.send('Hello World')
 })
 
+
+//------------Protected routes------------------//
 app.use(urlprefix+'/messages',messageRoutes)
 app.use(urlprefix+'/users',userRoutes)
 app.use(urlprefix+'/problems',problemRoutes)
+//----------------------------------------------//
 
 module.exports = app;
