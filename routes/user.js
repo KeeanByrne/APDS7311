@@ -43,7 +43,7 @@ router.post('/login', (req, res) => {
         .then(result => {
             if (!result) {
                 return res.status(401).json({
-                    message: 'Authentication Failed :-('
+                    message: 'Username and/or password are incorrect'
                 });
             }
             // Imported and used the 'jsonwebtoken' library
