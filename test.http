@@ -15,8 +15,8 @@ POST https://localhost:3000/api/users/signup HTTP/1.1
 content-type: application/json
 
 {
-    "username": "Keean Byrne", 
-    "password": "ilovepizza"
+    "username": "keeanbyrnetest@gmail.com", 
+    "password": "Password1"
 }
 
 
@@ -29,8 +29,8 @@ POST https://localhost:3000/api/users/login HTTP/1.1
 content-type: application/json
 
 {
-    "username": "Keean Byrne", 
-    "password": "ilovepizza"
+    "username": "keeanbyrnetest@gmail.com", 
+    "password": "Password1"
 }
 
 
@@ -40,11 +40,11 @@ content-type: application/json
 ### 
 POST https://localhost:3000/api/problems/problems HTTP/1.1
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IktlZWFuIEJ5cm5lIiwidXNlcmlkIjoiNjUyNTY5MTZlNDQxODdhM2M5MmQ1ZmVkIiwiaWF0IjoxNjk2OTY3MjQzLCJleHAiOjE2OTY5NzA4NDN9._WmRyVWA7q5OR0HSJ7JAMC_HxAtKbbuenxskmI1IpMY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImtlZWFuYnlybmV0ZXN0QGdtYWlsLmNvbSIsInVzZXJpZCI6IjY1NDlmMWVjN2ZkNjI0YzE1OWQwY2E2MSIsImlhdCI6MTY5OTM0NDkwNSwiZXhwIjoxNjk5MzQ4NTA1fQ.YFjUo2J608qm3EOdwwWTmkscOuCgvFttuUaPYnZ2aTA
 
 {
-    "department": "Marketing, Banking, Solutions",
-    "issue": "Database not working"
+    "department": "Spilt coffee on my laptop",
+    "issue": "Spacebar is not working"
 }
 
 

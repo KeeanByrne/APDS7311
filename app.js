@@ -28,6 +28,7 @@ mongoose.connect(connstring)
 app.use(express.json())
 app.use((reg,res,next)=>
 {
+    res.header('Access-Control-Allow-Origin', 'https://localhost:4200');   
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin,X-Requested-With, Content-Type, Accept, Authorization');
     res.setHeader('Access-Control-Allow-Methods', '*');
