@@ -16,10 +16,14 @@ const messageRoutes = require('./routes/message');
 const userRoutes = require('./routes/user');
 const problemRoutes = require('./routes/problem');
 
-// Import the necessary packages for express-brute
+//Imported packages for express-brute
 const ExpressBrute = require('express-brute');
 const MemoryStore = ExpressBrute.MemoryStore;
-const helmet = require('helmet'); // Import Helmet
+const helmet = require('helmet'); //Imported Helmet
+
+//Imported morgan and configured it for logging purposes
+const morgan = require('morgan');
+app.use(morgan('combined')); 
 
 mongoose.connect(connstring)
   .then(() => {
@@ -29,7 +33,7 @@ mongoose.connect(connstring)
     console.log('Not Connected Successfully :-(');
   }, options);
 
-  app.use(helmet());
+app.use(helmet());
 app.use(express.json());
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://localhost:4200');
@@ -43,9 +47,9 @@ app.use((req, res, next) => {
 const store = new MemoryStore();
 
 const bruteforce = new ExpressBrute(store, {
-  freeRetries: 5,       
-  minWait: 5 * 60 * 1000, 
-  maxWait: 60 * 60 * 1000, 
+  freeRetries: 5,
+  minWait: 5 * 60 * 1000,
+  maxWait: 60 * 60 * 1000,
 });
 
 // Left in for testing purposes
