@@ -19,6 +19,7 @@ const problemRoutes = require('./routes/problem');
 // Import the necessary packages for express-brute
 const ExpressBrute = require('express-brute');
 const MemoryStore = ExpressBrute.MemoryStore;
+const helmet = require('helmet'); // Import Helmet
 
 mongoose.connect(connstring)
   .then(() => {
@@ -28,6 +29,7 @@ mongoose.connect(connstring)
     console.log('Not Connected Successfully :-(');
   }, options);
 
+  app.use(helmet());
 app.use(express.json());
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://localhost:4200');
